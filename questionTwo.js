@@ -1,20 +1,24 @@
-let name = "Samuel Ayodeji"
-let age = 15
-let numTickets = 2
-let ticketPrice;
+let myName = "Samuel Ayodeji"
+let age = 35
+let numTickets = 5
 
-let regexName = /^[A-Za-z\s]+$/ig
-let result = name.match(regexName)
+let priceTicket = age ? 1500 : age <= 25 ? 2500 : 3500
+let totalCost = priceTicket * numTickets
 
+let regexName = /^[A-Za-z\s]+$/
+let regexResult = regexName.test(myName)
+console.log(regexResult)
 
-ticketPrice = age < 18 ? 1500 : age <= 25 ? 2500 : 3500
-
-let cost = ticketPrice * numTickets
 
 let isStudent = age <= 25
+console.log(isStudent)
 
-let studentDiscount = isStudent ? cost = cost * 0.9 : cost 
+let eligibleDiscount = isStudent ? "Yes" : "No"
 
-let finalOutput = result ? `Hello ${name},\n\nYou are eligible for a student discount; ${isStudent ? 'Yes' : 'No'}\n\nTotal tickets: ${numTickets}\n\nTotal price to pay: ${cost}` : `Invalid name`
 
-console.log(finalOutput)
+let discount = isStudent ? (totalCost * 0.9) : totalCost
+console.log(discount)
+
+let output = `Hello ${myName},\n\nYou are eligible for a student discount: ${eligibleDiscount}\n\nTotal tickets ${numTickets}\n\nTotal price: ${discount}`
+
+console.log(output)

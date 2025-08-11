@@ -1,15 +1,17 @@
 let fullName = "Samuel Ayodeji"
 let regexName = /^[A-Za-z\s]+$/
 let result = regexName.test(fullName)
-console.log(result)
 
-let phoneNumber = "08123456789";
-let regexNumber = /^0\d{10}$/
-let resultTwo = regexNumber.test(phoneNumber)
-console.log(resultTwo)
 
-let email = fullName && phoneNumber ? fullName.toLowerCase().split(' ').join('') + "_" + phoneNumber.slice(7, 11) + "@nileuniversity.edu.ng" : "Invalid email generation"
+let phoneNumber = "08090345678"
+let regexPhone = /^0\d{10}$/
+let phoneResult = regexPhone.test(phoneNumber)
 
-let output = fullName && phoneNumber ? `Success! Your generated email is ${email}` : 'Error: Invalid Name or Phone Number' 
+let universityName = "@university.edu"
 
-console.log(output)
+let emailGeneration = result && phoneResult ? fullName.toLowerCase().split(' ').join('') + "_" + phoneNumber.slice(7) + universityName : "invalid!"
+
+let isValid = result && phoneResult ? `Your email generation is successful: ${emailGeneration}` : `Error validating email`
+
+
+console.log(isValid)
