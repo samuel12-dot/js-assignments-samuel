@@ -2,7 +2,7 @@ let myName = "Samuel Ayodeji"
 let age = 35
 let numTickets = 5
 
-let priceTicket = age ? 1500 : age <= 25 ? 2500 : 3500
+let priceTicket = age >= 25 ? 3500 : age >= 18 ? 2500 : 1500
 let totalCost = priceTicket * numTickets
 
 let regexName = /^[A-Za-z\s]+$/
